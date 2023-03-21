@@ -8,6 +8,7 @@ $process = isset($_GET['process']) ? ($_GET['process']) : false;
        Form harus diisi semua
     </div>
 <?php endif; ?>
+<h1>Tambah Data</h1>
 <form method="POST" action="<?= BASE_URL . 'process/process_add.php'?>">
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
