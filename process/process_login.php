@@ -16,7 +16,7 @@ if(mysqli_num_rows($query) != 0){
     //membuat session
     session_start();
     $_SESSION['id'] = $row['id'];
-    header("location: " . BASE_URL . 'dashboard.php');
+    header("location: " . BASE_URL . 'dashboard.php?page=home');
 } else {
     header("location: " . BASE_URL);
 }
