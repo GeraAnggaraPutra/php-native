@@ -3,6 +3,7 @@
 require_once('function/koneksi.php');
 $process = isset($_GET['process']) ? ($_GET['process']) : false;
 $edit = isset($_GET['status']) ? ($_GET['status']) : false;
+$delete = isset($_GET['status']) ? ($_GET['status']) : false;
 
 ?>
 
@@ -14,6 +15,11 @@ $edit = isset($_GET['status']) ? ($_GET['status']) : false;
 <?php if($edit == 'success') : ?>
     <div class="alert alert-success" role="alert">
        Data berhasil diedit
+    </div>
+<?php endif; ?>
+<?php if($edit == 'deletesuccess') : ?>
+    <div class="alert alert-success" role="alert">
+       Data berhasil dihapus
     </div>
 <?php endif; ?>
 
@@ -45,7 +51,7 @@ $pegawai = mysqli_query($connect, "SELECT * FROM pegawai");
       <td><?= $p['nohp'] ?></td>
       <td><?= $p['alamat'] ?></td>
       <td>
-        <a href="" class="btn btn-danger">Delete</a>
+        <a href="<?= BASE_URL . 'process/process_delete.php?id='.$p['id'] ?>" class="btn btn-danger">Delete</a>
         <a href="<?= BASE_URL . 'dashboard.php?page=edit&id='.$p['id'] ?>" class="btn btn-info" >Edit</a>
       </td>
     </tr>
