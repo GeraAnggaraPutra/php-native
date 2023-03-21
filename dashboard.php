@@ -1,3 +1,10 @@
+<?php
+require_once('function/helper.php');
+if($_SESSION['id'] == null) {
+    header("location: ". BASE_URL);
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
